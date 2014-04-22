@@ -26,7 +26,7 @@ public class DbManager {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost/opad";
+            String url = "jdbc:mysql://localhost/pad";
             String user = "root", pass = "";
 
             /** Open connection */
