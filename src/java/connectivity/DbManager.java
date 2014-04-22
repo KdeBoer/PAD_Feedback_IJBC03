@@ -28,7 +28,7 @@ public class DbManager {
 
             String url = "jdbc:mysql://localhost/pad";
             String user = "root", pass = "";
-
+            
             /** Open connection */
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException e) {
