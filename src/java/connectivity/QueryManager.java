@@ -25,16 +25,17 @@ public class QueryManager {
     public void login(String email, String password){
         String login = "SELECT email, Wachtwoord FROM account where email = '" +
                 email + "' AND wachtwoord = '" + password + "'";
+        String loggedIn = "";
         try{
             rs = db.doQuery(login);
             if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Logged in succesful");
+                loggedIn = "Logged in succesful";
             }
             else if(rs.getString("email") != email){
-                JOptionPane.showMessageDialog(null, "Incorrect e-mail adres");
+                loggedIn =  "Incorrect e-mail adres";
             }
             else if(rs.getString("wachtwoord") != password){
-                JOptionPane.showMessageDialog(null, "Incorrect wachtwoord");
+                loggedIn = "Incorrect wachtwoord";
             }
         }
         catch(SQLException E){
