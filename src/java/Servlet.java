@@ -7,6 +7,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,10 +77,10 @@ public class Servlet extends HttpServlet {
          vv1_Context.put("errorCode", 1234);
          vv1_Context.put("errorCode", "Dit wordt meegegeven aan velocity");
          
-         final String s_Template = "index.vsl";
+         final String s_Template = "login.html";
         try {
 
-            template = Velocity.getTemplate("index.vsl");
+            template = Velocity.getTemplate("login.html");
         } catch (ResourceNotFoundException rnfe) {
             Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, rnfe);
             // couldn't find the template
@@ -93,7 +94,7 @@ public class Servlet extends HttpServlet {
         } catch (Exception e) {
             Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, e);
         }
-
+        
         PrintWriter out = response.getWriter();
         
         
